@@ -5,4 +5,4 @@ if [ -z "${TAG_NAME}" ]
     echo "Error: Tag name required"
     exit 1
 fi
-docker build --force-rm=true -t almeida/firebird:${TAG_NAME} .
+docker build --force-rm=true -t austrolia/firebird:${TAG_NAME} .
