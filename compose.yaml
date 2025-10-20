@@ -2,7 +2,7 @@ name: firebird
 
 services:
   firebird:
-    image: firebird:latest
+    image: austrlia/firebird:2.5.9
     ports:
       - "3050:3050"
     volumes:
