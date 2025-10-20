@@ -1,0 +1,13 @@
+name: firebird
+
+services:
+  firebird:
+    image: firebird:latest
+    ports:
+      - "3050:3050"
+    volumes:
+      - "C:/Users/User/Work/db:/firebird/data"
+    environment:
+      - FIREBIRD_DATABASE=/firebird/data/db_name.fdb
+      - FIREBIRD_USER=SYSDBA
+      - FIREBIRD_PASSWORD=masterkey
