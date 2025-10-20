@@ -1,22 +1,19 @@
-FROM debian:jessie
-MAINTAINER QVelix <mmaxbossee@gmail.com>
+FROM almalinux:8
+LABEL maintainer="QVelix <mmaxbossee@gmail.com>"
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN dnf install -y libstdc++ ncurses-compat-libs && dnf clean all
 
 #Install firebird
-RUN \
-  apt-get update && \
-  apt-get install -y firebird2.5-super && \
-  sed -ri 's/RemoteBindAddress = localhost/RemoteBindAddress = /g' /etc/firebird/2.5/firebird.conf && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
+ENV FIREBIRD_RPM_URL=https://github.com/FirebirdSQL/firebird/releases/download/R2_5_9/FirebirdCS-2.5.9.27139-0.amd64.rpm
+RUN curl -L "$FIREBIRD_RPM_URL" -o /tmp/firebird.rpm \
+  && rpm -ivh --nodeps --replacefiles /tmp/firebird.rpm \
+  && rm -f /tmp/firebird.rpm
 
-# forward logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/firebird/firebird2.5.log
+  RUN ln -sf /dev/stdout /opt/firebird/firebird.log
 
 VOLUME /var/lib/firebird/2.5/data
 VOLUME /var/lib/firebird/2.5/backup
 
 EXPOSE 3050
 
-CMD ["/usr/sbin/fbguard"]
+CMD ["/opt/firebird/bin/fbguard"]
