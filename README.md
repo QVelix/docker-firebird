@@ -1,4 +1,4 @@
-# Firebird Dockerfile
+# Firebird 2.5.9 Dockerfile
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/almeida/firebird.svg)](https://hub.docker.com/r/almeida/firebird/)
 [![Docker Stars](https://img.shields.io/docker/stars/almeida/firebird.svg)](https://hub.docker.com/r/almeida/firebird/)
@@ -30,7 +30,7 @@
 		-p 3050:3050 \
 		-v /somehostdir/firebird/backup/:/var/lib/firebird/2.5/backup/ \
 		-v /somehostdir/firebird/data/:/var/lib/firebird/2.5/data/ \
-		almeida/firebird
+		austrolia/firebird:2.5.9
 
 ## Misc
 
