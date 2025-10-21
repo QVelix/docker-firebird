@@ -1,7 +1,7 @@
-# Firebird 2.5.9 Dockerfile
+# Firebird Dockerfile
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/almeida/firebird.svg)](https://hub.docker.com/r/almeida/firebird/)
-[![Docker Stars](https://img.shields.io/docker/stars/almeida/firebird.svg)](https://hub.docker.com/r/almeida/firebird/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/austrolia/firebird.svg)](https://hub.docker.com/r/austrolia/firebird/)
+[![Docker Stars](https://img.shields.io/docker/stars/austrolia/firebird.svg)](https://hub.docker.com/r/austrolia/firebird/)
 
 ## Description
 
